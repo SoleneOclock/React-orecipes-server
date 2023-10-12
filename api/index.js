@@ -192,6 +192,30 @@ app.get('/api/favorites', checkLoggedIn, (req, res) => {
   });
 });
 
+/**
+ * POST /api/favorites/{id}
+ * @summary Add recipes to favorites list
+ * @tags recipes
+ * @param {string} id.path.required - id param
+ * @security BearerAuth
+ * @return {array<Recipe>} 200 - success response - application/json
+ */
+app.post('/api/favorites/:id', checkLoggedIn, (req, res) => {
+  console.log('>> POST /favorites/:id', req.user);
+
+  db.users.map(user => {
+    if (user === req.user.userId) {
+      if (!user.favorites.includes(recipe.id)){
+        user.favorites.push(req.params.id);
+      }      
+    }
+  });
+  console.log('<< 200');
+  res.json({ 
+    favorites: recipes.filter((recipe) => user.favorites.includes(recipe.id)), 
+  });
+});
+
 app.use((req, res, next) => {
   next(new Error('Not found'))
 });

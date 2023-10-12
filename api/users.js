@@ -3,7 +3,7 @@ module.exports = {
     {
       id: 32,
       password: 'bobo',
-      username: '.o0X0o.BoB.o0X0o.',
+      username: '.oX0o.BoB.o0Xo.',
       color: '#c23616',
       favorites: [21453, 462],
       email: 'bob@mail.io',
@@ -19,7 +19,7 @@ module.exports = {
     {
       id: 123,
       password: 'davy',
-      username: ']|I{•------» DaVe «------•}I|[',
+      username: ']I{•-----» DaVe «-----•}I[',
       color: '#009432',
       favorites: [8762],
       email: 'dave@mail.io',
